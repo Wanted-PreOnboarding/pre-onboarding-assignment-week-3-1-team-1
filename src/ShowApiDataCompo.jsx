@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
 // api 연결 확인 되었는지 보는 컴포넌트입니다.
-// 해당 방식으로 api data를 불러올 예정입니다.
+// 이슈목록 화면입니다.
 // 프로젝트 제출 전에 해당 컴포넌트는 삭제하겠습니다.
 const ShowApiDataCompo = () => {
   const navigate = useNavigate();
@@ -32,20 +32,24 @@ const ShowApiDataCompo = () => {
       {data?.map(data => (
         <div key={data.id}>
           <div>
-            <b>number:</b>
-            {data.number}
-          </div>
-          <div>
             <b>title:</b>
             {data.title}
           </div>
           <div>
-            <b>state:</b>
-            {data.state}
+            <b>comments:</b>
+            {data.comments}
+          </div>
+          <div>
+            <b>body:</b>
+            {data.body}
           </div>
           <div>
             <b>url:</b>
             {data.url}
+          </div>
+          <div>
+            <b>created_at:</b>
+            {data.created_at}
           </div>
           <button onClick={goToDetailPage} value={data.number}>
             상세보기
