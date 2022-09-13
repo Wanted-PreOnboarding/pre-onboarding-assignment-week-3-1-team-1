@@ -4,13 +4,13 @@ import styled from 'styled-components';
 function Header() {
   return (
     <HeaderContainer>
-      <img src='/images/logo.png' alt='header-logo'></img>
+      <img src="/images/logo.png" alt="header-logo"></img>
       <ul>
         <li>Organization Name</li>
         <li>Repository Name</li>
       </ul>
     </HeaderContainer>
-  )
+  );
 }
 
 export default Header;
@@ -25,9 +25,9 @@ const HeaderContainer = styled.header`
   align-items: center;
   background-color: #fff;
   z-index: 1;
-  
+
   img {
-    width: 80px
+    width: 80px;
   }
 
   ul {
@@ -39,6 +39,6 @@ const HeaderContainer = styled.header`
 
     li {
       list-style: none;
-    } 
+    }
   }
-`
+`;

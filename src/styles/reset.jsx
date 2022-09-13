@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const AppContainer = styled.div`
   height: 100%;
@@ -8,7 +8,7 @@ export const AppContainer = styled.div`
     box-sizing: border-box;
   }
 
-  @media screen and (max-width: 991px){
+  @media screen and (max-width: 991px) {
     min-width: 480px;
   }
-`
+`;
