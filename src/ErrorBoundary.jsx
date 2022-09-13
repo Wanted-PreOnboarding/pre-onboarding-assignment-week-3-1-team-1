@@ -1,4 +1,5 @@
 import React from 'react';
+import PropType from 'prop-types';
 
 const initialState = { error: null };
 
@@ -15,7 +16,7 @@ export default class ErrorBoundary extends React.Component {
 
   componentDidCatch(error, errorInfo) {
     // 에러 리포팅 서비스에 에러를 기록할 수도 있습니다.
-    this.props?.onError?.(error, errorInfo);
+    this.props.onError?.(error, errorInfo);
   }
 
   render() {
@@ -35,3 +36,8 @@ export default class ErrorBoundary extends React.Component {
     return this.props.children;
   }
 }
+
+ErrorBoundary.propTypes = {
+  children: PropType.node.isRequired,
+  onError: PropType.func,
+};
