@@ -5,11 +5,29 @@ const octokit = new Octokit({
 });
 
 class ApiModel {
-  async getData() {
-    return await octokit.request('GET /repos/{owner}/{repo}/issues', {
-      owner: 'octocat',
-      repo: 'Spoon-Knife',
-    });
+  async getList() {
+    try {
+      const result = await octokit.request('GET /repos/{owner}/{repo}/issues', {
+        owner: 'Angular',
+        repo: 'Angular-cli',
+      });
+      return result.data;
+    } catch (error) {
+      alert(`Error! Status: ${error.status}. Message: ${error.response.data.message}`);
+    }
+  }
+
+  async getItem(number) {
+    try {
+      const result = await octokit.request('GET /repos/{owner}/{repo}/issues/{number}', {
+        owner: 'Angular',
+        repo: 'Angular-cli',
+        number: number,
+      });
+      return result.data;
+    } catch (error) {
+      alert(`Error! Status: ${error.status}. Message: ${error.response.data.message}`);
+    }
   }
 }
 
