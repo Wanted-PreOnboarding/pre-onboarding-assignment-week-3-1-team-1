@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ShowApiDataCompo from './ShowApiDataCompo';
 import ShowApiDetailCompo from './ShowApiDetailCompo';
-import AppContainer from './styles/reset';
+import { AppContainer } from './styles/reset';
 
 function App() {
   return (
