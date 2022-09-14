@@ -8,6 +8,7 @@ export const AppContainer = styled.div`
     box-sizing: border-box;
   }
 
+  /* 태블릿 사이즈 이하 반응형 */
   @media screen and (max-width: 991px) {
     min-width: 480px;
   }

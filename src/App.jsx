@@ -12,9 +12,8 @@ function App() {
     <AppContainer className="App">
       <Header />
       <Routes>
-        {/* api데이터가 어떻게 나오는지 확인하기 위해 임시적으로 만들었습니다. 개발하면서 지우셔도 상관없습니다. */}
-        <Route path="/details" element={<ShowApiDetailCompo />} />
         <Route path="/" element={<ShowApiDataCompo />} />
+        <Route path="/detail" element={<ShowApiDetailCompo />} />
       </Routes>
       <Footer />
     </AppContainer>
