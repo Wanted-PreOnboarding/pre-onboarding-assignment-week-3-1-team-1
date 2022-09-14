@@ -11,7 +11,7 @@ import useInfinityScroll from '../../../hook/useInfinityScroll';
 function IssueList() {
   const navigate = useNavigate();
   const state = useIssuesState();
-  const { list, isFetching } = useInfinityScroll();
+  const { list, canShowNextData } = useInfinityScroll();
   const { error, loading } = state.issues;
 
   const goToDetailPage = num => {
@@ -38,7 +38,7 @@ function IssueList() {
           </Fragment>
         );
       })}
-      {isFetching && <h1>로딩중...</h1>}
+      {canShowNextData && <h1>로딩중...</h1>}
     </Container>
   );
 }
