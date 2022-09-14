@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import styled from 'styled-components';
-import ReactMarkdown from 'react-markdown';
 
 import ApiModel from '../../api';
 import { useIssuesState, useIssuesDispatch } from '../../context/IssueContext';
 import { useErrorHandler } from '../../components/ErrorBoundary';
 import IssueDetailCard from './components/IssueDetailCard';
+import IssueDetailMain from './components/IssueDetailMain';
 
 const IssueDetail = () => {
   const { number } = useParams();
@@ -34,9 +34,7 @@ const IssueDetail = () => {
   return (
     <Container>
       <IssueDetailCard />
-      <article>
-        <ReactMarkdown></ReactMarkdown>
-      </article>
+      <IssueDetailMain />
     </Container>
   );
 };
