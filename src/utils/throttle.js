@@ -3,7 +3,6 @@ export const throttle = (handler, timeout = 300) => {
   let invokedTime;
   let timer;
   return function (thi$, ...args) {
-    console.log(invokedTime, timer);
     if (!invokedTime) {
       handler.apply(thi$, args);
       invokedTime = Date.now();

@@ -14,9 +14,8 @@ function IssueList() {
   const { list, isFetching } = useInfinityScroll();
   const { error, loading } = state.issues;
 
-  const goToDetailPage = e => {
-    const num = e.target.value;
-    navigate('/detail', { state: { num } });
+  const goToDetailPage = num => {
+    navigate(`/${num}`, { state: { num } });
   };
 
   if (loading) return <div>로딩중..</div>;
