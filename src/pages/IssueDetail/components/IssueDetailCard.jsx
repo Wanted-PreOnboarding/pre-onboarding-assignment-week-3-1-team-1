@@ -67,8 +67,9 @@ const IssueInfoTitle = styled.div`
   margin-top: 8px;
   margin-bottom: 8px;
   font-size: 20px;
-  @media screen and (max-width: 750px) {
-    font-size: 2.5vw;
+  font-weight: 700;
+  @media screen and (max-width: 600px) {
+    font-size: 3.5vw;
   }
 
   span {
