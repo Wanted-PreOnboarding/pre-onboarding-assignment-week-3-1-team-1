@@ -13,10 +13,14 @@ const IssueDetailCard = () => {
   return (
     <header>
       <IssueDetail>
-        <AvatarImg src={data.user.avatar_url} alt="이슈를 생성한 사람 아바타"></AvatarImg>
+        <Avatar>
+          <AvatarImg src={data.user.avatar_url} alt="이슈를 생성한 사람 아바타"></AvatarImg>
+        </Avatar>
         <IssueInfo>
           <IssueInfoMain>
-            <IssueInfoTitle>{data.title}</IssueInfoTitle>
+            <IssueInfoTitle>
+              <span>#{data.number}</span> {data.title}
+            </IssueInfoTitle>
             <IssueInfoUser>
               작성자 : {data.user.login} / 작성일 : {data.created_at.slice(0, 10)}
             </IssueInfoUser>
@@ -40,13 +44,13 @@ const IssueDetail = styled.div`
   padding-bottom: 4px;
 `;
 
-const AvatarImg = styled.img`
+const Avatar = styled.div`
   width: 50px;
+`;
+const AvatarImg = styled.img`
+  width: 100%;
   border-radius: 50%;
-
-  @media screen and (min-width: 650px) {
-    width: 60px;
-  }
+  heigth: auto;
 `;
 
 const IssueInfo = styled.div`
@@ -64,6 +68,10 @@ const IssueInfoTitle = styled.div`
   font-size: 20px;
   @media screen and (max-width: 750px) {
     font-size: 2.5vw;
+  }
+
+  span {
+    opacity: 0.7;
   }
 `;
 

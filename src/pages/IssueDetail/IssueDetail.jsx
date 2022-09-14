@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import styled from 'styled-components';
+import ReactMarkdown from 'react-markdown';
 
 import ApiModel from '../../api';
 import { useIssuesState, useIssuesDispatch } from '../../context/IssueContext';
@@ -17,9 +18,8 @@ const IssueDetail = () => {
   const handleError = useErrorHandler();
 
   useEffect(() => {
-    async function getDetail() {
-      const detailItem = await ApiModel.getItem(dispatch, number);
-      console.info(detailItem);
+    function getDetail() {
+      ApiModel.getItem(dispatch, number);
     }
 
     getDetail();
@@ -34,7 +34,9 @@ const IssueDetail = () => {
   return (
     <Container>
       <IssueDetailCard />
-      <DetailContainer></DetailContainer>
+      <article>
+        <ReactMarkdown></ReactMarkdown>
+      </article>
     </Container>
   );
 };
@@ -46,5 +48,3 @@ const Container = styled.section`
   max-width: 1000px;
   margin: 0 auto;
 `;
-
-const DetailContainer = styled.article``;
