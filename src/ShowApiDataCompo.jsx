@@ -37,6 +37,10 @@ const ShowApiDataCompo = () => {
             {data.title}
           </div>
           <div>
+            <b>state:</b>
+            {data.state}
+          </div>
+          <div>
             <b>comments:</b>
             {data.comments}
           </div>
