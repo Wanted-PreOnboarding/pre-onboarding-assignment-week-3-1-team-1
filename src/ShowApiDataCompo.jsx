@@ -1,10 +1,8 @@
 import React from 'react';
-import ApiModel from './api';
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import { useIssuesState, useIssuesDispatch } from './context/IssueContext';
-// import {useErrorHandler} from './components/ErrorBoundary'
+import { useIssuesState } from './context/IssueContext';
+import useInfinityScroll from './hook/useInfinityScroll';
 
 // !!!
 // api 연결 확인 되었는지 보는 컴포넌트입니다.
@@ -12,39 +10,8 @@ import { useIssuesState, useIssuesDispatch } from './context/IssueContext';
 // 프로젝트 제출 전에 해당 컴포넌트는 삭제하겠습니다.
 const ShowApiDataCompo = () => {
   const navigate = useNavigate();
-  const [list, setList] = useState([]);
-  const [page, setPage] = useState(1);
+  const { list, isFetching } = useInfinityScroll();
   const state = useIssuesState();
-  const dispatch = useIssuesDispatch();
-  const [isFetching, setFetching] = useState(false);
-  // const handleError = useErrorHandler();
-
-  async function getApi(page) {
-    const fetchData = await ApiModel.getList(dispatch, page);
-    console.info(fetchData);
-    setList(list.concat(fetchData));
-    setPage(page + 1);
-    setFetching(false);
-  }
-
-  useEffect(() => {
-    getApi(page);
-    const handleScroll = () => {
-      const { scrollTop, offsetHeight } = document.documentElement;
-      if (window.innerHeight + scrollTop >= offsetHeight) {
-        setFetching(true);
-      }
-    };
-    setFetching(true);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    if (isFetching) getApi(page);
-    else setFetching(false);
-  }, [isFetching]);
-
   const { data, error, loading } = state.issues;
 
   const goToDetailPage = e => {
