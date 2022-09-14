@@ -5,12 +5,16 @@ const octokit = new Octokit({
 });
 
 class ApiModel {
-  async getList() {
+  async getList(page = 1) {
     try {
       const result = await octokit.request('GET /repos/{owner}/{repo}/issues', {
         owner: 'Angular',
         repo: 'Angular-cli',
+        per_page: 10,
+        page: page,
+        sort: 'comments',
       });
+      console.info(result);
       return result.data;
     } catch (error) {
       alert(`Error! Status: ${error.status}. Message: ${error.response.data.message}`);

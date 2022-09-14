@@ -23,7 +23,7 @@ const ShowApiDataCompo = () => {
 
   const goToDetailPage = e => {
     const num = e.target.value;
-    navigate('/details', { state: { num } });
+    navigate('/detail', { state: { num } });
   };
 
   return (
