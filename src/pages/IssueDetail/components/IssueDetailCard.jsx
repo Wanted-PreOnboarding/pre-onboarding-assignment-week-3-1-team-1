@@ -47,6 +47,7 @@ const IssueDetail = styled.div`
 
 const Avatar = styled.div`
   width: 50px;
+  margin: auto 0;
 `;
 const AvatarImg = styled.img`
   width: 100%;
@@ -61,6 +62,7 @@ const IssueInfo = styled.div`
 
 const IssueInfoMain = styled.div`
   width: 95%;
+  margin: 0 10px;
 `;
 
 const IssueInfoTitle = styled.div`
@@ -80,14 +82,17 @@ const IssueInfoTitle = styled.div`
 const IssueInfoUser = styled.div`
   font-size: 16px;
 
-  @media screen and (max-width: 750px) {
-    font-size: 2vw;
+  font-weight: 500;
+
+  @media screen and (max-width: 600px) {
+    font-size: 3vw;
   }
 `;
 
 const IssueInfoComments = styled.div`
   width: 5%;
   flex-direction: column;
+  margin: auto 0;
   div {
     font-size: 0.75rem;
   }
