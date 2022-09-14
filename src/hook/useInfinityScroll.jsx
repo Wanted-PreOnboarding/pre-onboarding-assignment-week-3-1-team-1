@@ -10,6 +10,8 @@ const useInfinityScroll = () => {
   const [isFetching, setFetching] = useState(false);
   const [isLastPage, setLastPage] = useState(false);
 
+  const canShowNextData = isFetching && !isLastPage;
+
   const getApi = useCallback(
     async function (page) {
       const fetchData = await ApiModel.getList(dispatch, page);
@@ -43,11 +45,11 @@ const useInfinityScroll = () => {
   }, []);
 
   useEffect(() => {
-    if (isFetching && !isLastPage) getApi(page);
+    if (canShowNextData) getApi(page);
     else setFetching(false);
   }, [isFetching]);
 
-  return { list, isFetching };
+  return { list, canShowNextData };
 };
 
 export default useInfinityScroll;
