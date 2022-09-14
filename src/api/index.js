@@ -6,7 +6,10 @@ const octokit = new Octokit({
 
 class ApiModel {
   async getList(dispatch, page) {
-    dispatch({ type: 'GET_ISSUES_PENDING' });
+    // 무한 스크롤 구현 중 새로 데이터를 불러올 때마다 화면 최상단으로 올라가서 해당 dispatch를 if문으로 감쌌습니다.
+    if (page < 2) {
+      dispatch({ type: 'GET_ISSUES_PENDING' });
+    }
     try {
       const result = await octokit.request('GET /repos/{owner}/{repo}/issues', {
         owner: 'Angular',

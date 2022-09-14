@@ -56,7 +56,9 @@ const ShowApiDataCompo = () => {
   if (error) return <div>에러가 발생했습니다</div>;
   //에러 핸들링 대안입니다. 위에 주석처리된 handleError와 import 구문의 추석을 해제하고 시도해 보세요.
   // if (error) return handleError(error);
-  if (!data) return null; //여기 커스텀해서 무한 스크롤 구현해주시면 됩니다.
+  if (!data) return null;
+  //여기 커스텀해서 무한 스크롤 구현해주시면 됩니다.
+  //해당 분기로 무한 스크롤을 어떻게 구현할지 감이 안와서 일단 다른 방식으로 무한 스크롤 구현 해봤습니다...
 
   return (
     <Box className="example-box">
