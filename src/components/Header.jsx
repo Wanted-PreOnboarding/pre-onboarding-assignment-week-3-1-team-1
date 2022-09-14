@@ -1,14 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { AiFillGithub } from 'react-icons/ai';
-
 import { Color } from '../styles/common';
 
 function Header() {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <img src="/images/logo.png" alt="header-logo"></img>
+        <Link to='/'>
+          <img src="/images/logo.png" alt="header-logo"></img>
+        </Link>
         <ul>
           <li>Organization / Repository</li>
           <li>

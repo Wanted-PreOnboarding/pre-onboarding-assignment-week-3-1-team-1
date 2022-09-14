@@ -27,6 +27,7 @@ export default Footer;
 
 const FooterContainer = styled.footer`
   width: 100%;
+  margin-top: 20px;
   background-color: ${Color.GRAY200};
 `;
 
