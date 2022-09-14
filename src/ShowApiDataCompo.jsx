@@ -12,18 +12,38 @@ import { useIssuesState, useIssuesDispatch } from './context/IssueContext';
 // 프로젝트 제출 전에 해당 컴포넌트는 삭제하겠습니다.
 const ShowApiDataCompo = () => {
   const navigate = useNavigate();
-  const [list, setList] = useState(null);
+  const [list, setList] = useState([]);
+  const [page, setPage] = useState(1);
   const state = useIssuesState();
   const dispatch = useIssuesDispatch();
+  const [isFetching, setFetching] = useState(false);
   // const handleError = useErrorHandler();
 
+  async function getApi(page) {
+    const fetchData = await ApiModel.getList(dispatch, page);
+    console.info(fetchData);
+    setList(list.concat(fetchData));
+    setPage(page + 1);
+    setFetching(false);
+  }
+
   useEffect(() => {
-    async function getApi() {
-      const data = await ApiModel.getList(dispatch);
-      setList(data);
-    }
-    getApi();
+    getApi(page);
+    const handleScroll = () => {
+      const { scrollTop, offsetHeight } = document.documentElement;
+      if (window.innerHeight + scrollTop >= offsetHeight) {
+        setFetching(true);
+      }
+    };
+    setFetching(true);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (isFetching) getApi(page);
+    else setFetching(false);
+  }, [isFetching]);
 
   const { data, error, loading } = state.issues;
 
@@ -68,6 +88,7 @@ const ShowApiDataCompo = () => {
           </button>
         </div>
       ))}
+      {isFetching && <h1>로딩중...</h1>}
     </Box>
   );
 };

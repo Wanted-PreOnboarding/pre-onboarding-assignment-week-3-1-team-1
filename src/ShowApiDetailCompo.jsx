@@ -2,6 +2,7 @@ import React from 'react';
 import ApiModel from './api';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useIssuesDispatch } from './context/IssueContext';
 
 // api 연결 확인 되었는지 보는 컴포넌트입니다.
 // 이슈 상세 화면입니다.
@@ -10,10 +11,11 @@ const ShowApiDetailCompo = () => {
   const { state } = useLocation();
   const { num } = state;
   const [data, setData] = useState(null);
+  const dispatch = useIssuesDispatch();
 
   useEffect(() => {
     async function getApi(num) {
-      const data = await ApiModel.getItem(num);
+      const data = await ApiModel.getItem(dispatch, num);
       console.info(data);
       setData(data);
     }
