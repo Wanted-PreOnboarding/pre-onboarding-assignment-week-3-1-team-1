@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { TbMessages } from 'react-icons/tb';
 
 import { useIssuesState } from '../../../context/IssueContext';
+import { getSimpleDatePattern } from '../../../util/transferDate';
 
 const IssueDetailCard = () => {
   const state = useIssuesState();
@@ -22,7 +23,7 @@ const IssueDetailCard = () => {
               <span>#{data.number}</span> {data.title}
             </IssueInfoTitle>
             <IssueInfoUser>
-              작성자 : {data.user.login} / 작성일 : {data.created_at.slice(0, 10)}
+              작성자 : {data.user.login} / 작성일 : {getSimpleDatePattern(data.created_at)}
             </IssueInfoUser>
           </IssueInfoMain>
           <IssueInfoComments>
@@ -46,6 +47,7 @@ const IssueDetail = styled.div`
 
 const Avatar = styled.div`
   width: 50px;
+  margin: auto 0;
 `;
 const AvatarImg = styled.img`
   width: 100%;
@@ -60,14 +62,16 @@ const IssueInfo = styled.div`
 
 const IssueInfoMain = styled.div`
   width: 95%;
+  margin: 0 10px;
 `;
 
 const IssueInfoTitle = styled.div`
   margin-top: 8px;
   margin-bottom: 8px;
   font-size: 20px;
-  @media screen and (max-width: 750px) {
-    font-size: 2.5vw;
+  font-weight: 700;
+  @media screen and (max-width: 600px) {
+    font-size: 3.5vw;
   }
 
   span {
@@ -78,14 +82,17 @@ const IssueInfoTitle = styled.div`
 const IssueInfoUser = styled.div`
   font-size: 16px;
 
-  @media screen and (max-width: 750px) {
-    font-size: 2vw;
+  font-weight: 500;
+
+  @media screen and (max-width: 600px) {
+    font-size: 3vw;
   }
 `;
 
 const IssueInfoComments = styled.div`
   width: 5%;
   flex-direction: column;
+  margin: auto 0;
   div {
     font-size: 0.75rem;
   }
