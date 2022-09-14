@@ -26,13 +26,12 @@ function Footer() {
 export default Footer;
 
 const FooterContainer = styled.footer`
-  padding: 50px 0;
-  background-color: ${Color.GRAY200};
-  align-items: center;
+  width: 100%;
+  background-color: ${ Color.GRAY200 };
 `;
 
 const FooterContent = styled.div`
-  width: 980px; /* header width 통일 */
+  width: 980px; /* inner width */
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -47,12 +46,25 @@ const FooterContent = styled.div`
 
   /* footer의 text */
   div {
+    text-align: left;
     p {
       color: ${Color.GRAY100};
-      font-size: 18px;
+      font-size: 16px;
 
       span {
         font-weight: 700;
+      }
+    }
+  }
+
+  /* 태블릿 사이즈 이하 반응형 */
+  @media screen and (max-width: 991px) {
+    width: 100%;
+    gap: 10%;
+    
+    div {
+      p {
+        font-size: 14px;
       }
     }
   }
