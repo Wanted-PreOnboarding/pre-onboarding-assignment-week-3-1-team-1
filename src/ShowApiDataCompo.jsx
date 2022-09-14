@@ -28,6 +28,7 @@ const ShowApiDataCompo = () => {
   }, []);
 
   const { data, error, loading } = state.issues;
+  console.info(data, error, loading);
 
   const goToDetailPage = e => {
     const num = e.target.value;

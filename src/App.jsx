@@ -7,9 +7,9 @@ import { IssuesProvider } from './context/IssueContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ShowApiDataCompo from './ShowApiDataCompo';
-import ShowApiDetailCompo from './ShowApiDetailCompo';
 import ErrorBoundary from './components/ErrorBoundary';
 import Fallback from './components/Fallback';
+import IssueDetail from './pages/IssueDetail/IssueDetail';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
         <ErrorBoundary fallback={<Fallback />}>
           <Routes>
             <Route path="/" element={<ShowApiDataCompo />} />
-            <Route path="/detail" element={<ShowApiDetailCompo />} />
+            <Route path="/:number" element={<IssueDetail />} />
           </Routes>
         </ErrorBoundary>
         <Footer />

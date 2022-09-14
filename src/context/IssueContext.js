@@ -7,7 +7,7 @@ const initialState = {
     error: null,
   },
   issueDetail: {
-    loading: false,
+    loading: true,
     data: null,
     error: null,
   },
