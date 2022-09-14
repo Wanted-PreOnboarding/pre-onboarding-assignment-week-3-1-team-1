@@ -12,8 +12,10 @@ function Header() {
         <ul>
           <li>Organization / Repository</li>
           <li>
-            <AiFillGithub size='24'/>
-            <a href='https://github.com/angular/angular-cli'>angular / <span>angular cli</span></a>
+            <AiFillGithub size="24" />
+            <a href="https://github.com/angular/angular-cli">
+              angular / <span>angular cli</span>
+            </a>
           </li>
         </ul>
       </HeaderContent>
@@ -28,8 +30,8 @@ const HeaderContainer = styled.header`
   margin-bottom: 20px;
   padding: 20px 0;
   background-color: #fff;
-  border-bottom: 1px solid ${ Color.GRAY200 };
-`
+  border-bottom: 1px solid ${Color.GRAY200};
+`;
 
 const HeaderContent = styled.div`
   width: 980px; /* inner width */
@@ -44,11 +46,10 @@ const HeaderContent = styled.div`
   img {
     width: 80px;
   }
-  
+
   /* organization명 / repository명 */
   ul {
     padding: 0;
-    
 
     li {
       list-style: none;
@@ -65,14 +66,14 @@ const HeaderContent = styled.div`
         gap: 5px;
 
         a {
-        color: ${ Color.BLUE100 };
-        text-decoration: none;
-        font-weight: 500;
+          color: ${Color.BLUE100};
+          text-decoration: none;
+          font-weight: 500;
 
-        span {
-          font-weight: 700;
+          span {
+            font-weight: 700;
+          }
         }
-      }
       }
     }
   }

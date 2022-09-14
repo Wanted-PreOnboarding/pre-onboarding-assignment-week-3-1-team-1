@@ -27,7 +27,7 @@ export default Footer;
 
 const FooterContainer = styled.footer`
   width: 100%;
-  background-color: ${ Color.GRAY200 };
+  background-color: ${Color.GRAY200};
 `;
 
 const FooterContent = styled.div`
@@ -61,7 +61,7 @@ const FooterContent = styled.div`
   @media screen and (max-width: 991px) {
     width: 100%;
     gap: 10%;
-    
+
     div {
       p {
         font-size: 14px;
