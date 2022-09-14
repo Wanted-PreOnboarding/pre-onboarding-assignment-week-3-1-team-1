@@ -8,7 +8,7 @@ function IssueItem({ number, title, comments, user, created_at, goToDetailPage }
   return (
     <Container>
       <LeftWrapper>
-        <Title onClick={goToDetailPage}>
+        <Title onClick={() => goToDetailPage(number)}>
           <H1>
             <span>#{number}&nbsp;</span>
           </H1>
