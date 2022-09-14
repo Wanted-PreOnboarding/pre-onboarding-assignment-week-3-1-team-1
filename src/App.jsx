@@ -16,7 +16,7 @@ function App() {
     <AppContainer className="App">
       <IssuesProvider>
         <Header />
-        <ErrorBoundary Fallback={<Fallback />}>
+        <ErrorBoundary fallback={<Fallback />}>
           <Routes>
             <Route path="/" element={<ShowApiDataCompo />} />
             <Route path="/detail" element={<ShowApiDetailCompo />} />
