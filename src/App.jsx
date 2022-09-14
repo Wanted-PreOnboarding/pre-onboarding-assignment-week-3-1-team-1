@@ -11,10 +11,10 @@ function App() {
   return (
     <AppContainer className="App">
       <Header />
-        <Routes>
-          <Route path='/' element={<ShowApiDataCompo />}/>
-          <Route path='/detail' element={<ShowApiDetailCompo />}/>
-        </Routes>
+      <Routes>
+        <Route path="/" element={<ShowApiDataCompo />} />
+        <Route path="/detail" element={<ShowApiDetailCompo />} />
+      </Routes>
       <Footer />
     </AppContainer>
   );

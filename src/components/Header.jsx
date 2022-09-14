@@ -8,7 +8,7 @@ function Header() {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <Link to='/'>
+        <Link to="/">
           <img src="/images/logo.png" alt="header-logo"></img>
         </Link>
         <ul>
