@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { TbMessages } from 'react-icons/tb';
 
 import { useIssuesState } from '../../../context/IssueContext';
+import { getSimpleDatePattern } from '../../../util/transferDate';
 
 const IssueDetailCard = () => {
   const state = useIssuesState();
@@ -22,7 +23,7 @@ const IssueDetailCard = () => {
               <span>#{data.number}</span> {data.title}
             </IssueInfoTitle>
             <IssueInfoUser>
-              작성자 : {data.user.login} / 작성일 : {data.created_at.slice(0, 10)}
+              작성자 : {data.user.login} / 작성일 : {getSimpleDatePattern(data.created_at)}
             </IssueInfoUser>
           </IssueInfoMain>
           <IssueInfoComments>
