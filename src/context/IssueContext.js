@@ -1,3 +1,5 @@
+import React, { createContext, useReducer, useContext } from 'react';
+
 const initialState = {
   issues: {
     loading: false,
@@ -30,6 +32,7 @@ const error = error => ({
   data: null,
   error: error,
 });
+
 // reducer
 function IssuesReducer(state, action) {
   switch (action.type) {
@@ -66,4 +69,37 @@ function IssuesReducer(state, action) {
     default:
       return state;
   }
+}
+
+//  Context 생성
+const IssuesStateContext = createContext(null);
+const IssuesDispatchContext = createContext(null);
+
+// 위에서 선언한 두가지 Context 들의 Provider 로 감싸주는 컴포넌트
+export function IssuesProvider({ children }) {
+  const [state, dispatch] = useReducer(IssuesReducer, initialState);
+  return (
+    <IssuesStateContext.Provider value={state}>
+      <IssuesDispatchContext.Provider value={dispatch}>{children}</IssuesDispatchContext.Provider>
+    </IssuesStateContext.Provider>
+  );
+}
+
+// State를 쉽게 조회 할 수 있게 해주는 커스텀 Hook
+export function useIssuesState() {
+  const state = useContext(IssuesStateContext);
+
+  if (!state) {
+    throw new Error('Cannot find IssuesProvider');
+  }
+  return state;
+}
+
+// Dispatch를 쉽게 사용 할 수 있게 해주는 커스텀 Hook
+export function useIssuesDispatch() {
+  const dispatch = useContext(IssuesDispatchContext);
+  if (!dispatch) {
+    throw new Error('Cannot find IssuesProvider');
+  }
+  return dispatch;
 }
