@@ -3,6 +3,7 @@ import ApiModel from './api';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import { useIssuesState, useIssuesDispatch } from './context/IssueContext';
 
 // api 연결 확인 되었는지 보는 컴포넌트입니다.
 // 이슈목록 화면입니다.
@@ -23,15 +24,21 @@ const ShowApiDataCompo = () => {
     getApi();
   }, []);
 
+  const { data, error, loading } = state.issues;
+
   const goToDetailPage = e => {
     const num = e.target.value;
     navigate('/details', { state: { num } });
   };
 
+  if (loading) return <div>로딩중..</div>;
+  if (error) return <div>에러가 발생했습니다</div>;
+  if (!data) return null; //여기 커스텀해서 무한 스크롤 구현해주시면 됩니다.
+
   return (
     <Box className="example-box">
       <h1>리스트</h1>
-      {data?.map(data => (
+      {list?.map(data => (
         <div key={data.id}>
           <div>
             <b>title:</b>
