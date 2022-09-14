@@ -8,6 +8,7 @@ import { useIssuesState, useIssuesDispatch } from '../../context/IssueContext';
 import { useErrorHandler } from '../../components/ErrorBoundary';
 import IssueDetailCard from './components/IssueDetailCard';
 import IssueDetailMain from './components/IssueDetailMain';
+import Loading from './components/Loading';
 
 const IssueDetail = () => {
   const { number } = useParams();
@@ -27,7 +28,7 @@ const IssueDetail = () => {
 
   const { data, error, loading } = state.issueDetail;
 
-  if (loading) return <div>로딩중..</div>;
+  if (loading) return <Loading />;
   if (error) return handleError(error);
   if (!data) return <div>데이터없음</div>;
 
