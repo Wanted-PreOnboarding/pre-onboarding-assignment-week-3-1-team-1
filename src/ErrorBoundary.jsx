@@ -45,8 +45,9 @@ ErrorBoundary.propTypes = {
   onError: PropType.func,
 };
 
-function useErrorHandler(givenError) {
+function useErrorHandler(givenError = null) {
   const [error, setError] = useState(null);
+
   if (givenError !== null) throw givenError;
   if (error !== null) throw error;
 
