@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import ApiModel from '../api';
 import { useIssuesDispatch } from '../context/IssueContext';
-import { throttle } from '../utils/throttle';
+import { throttle } from '../util/throttle';
 
 const useInfinityScroll = () => {
   const [page, setPage] = useState(1);
