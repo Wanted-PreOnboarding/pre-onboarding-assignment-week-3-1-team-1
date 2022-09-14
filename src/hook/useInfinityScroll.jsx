@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import ApiModel from '../api';
 import { useIssuesDispatch } from '../context/IssueContext';
+import { throttle } from '../utils/throttle';
 
 const useInfinityScroll = () => {
   const [page, setPage] = useState(1);
@@ -29,12 +30,13 @@ const useInfinityScroll = () => {
 
   useEffect(() => {
     getApi(page);
-    const handleScroll = () => {
+
+    const handleScroll = throttle(() => {
       const { scrollTop, offsetHeight } = document.documentElement;
       if (window.innerHeight + scrollTop >= offsetHeight) {
         setFetching(true);
       }
-    };
+    });
     setFetching(true);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
