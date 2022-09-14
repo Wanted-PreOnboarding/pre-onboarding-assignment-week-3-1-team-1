@@ -9,13 +9,15 @@ import { useNavigate } from 'react-router-dom';
 // 프로젝트 제출 전에 해당 컴포넌트는 삭제하겠습니다.
 const ShowApiDataCompo = () => {
   const navigate = useNavigate();
-  const [data, setData] = useState(null);
+  const [list, setList] = useState(null);
+  const state = useIssuesState();
+  const dispatch = useIssuesDispatch();
 
   useEffect(() => {
     async function getApi() {
-      const data = await ApiModel.getList();
-      console.info(data);
-      setData(data);
+      const data = await ApiModel.getList(dispatch);
+
+      setList(data);
     }
 
     getApi();
