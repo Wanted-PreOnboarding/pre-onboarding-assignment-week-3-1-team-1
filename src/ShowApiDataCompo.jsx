@@ -13,6 +13,7 @@ const ShowApiDataCompo = () => {
   const { list, isFetching } = useInfinityScroll();
   const state = useIssuesState();
   const { data, error, loading } = state.issues;
+  console.info(data, error, loading);
 
   const goToDetailPage = e => {
     const num = e.target.value;

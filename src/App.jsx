@@ -4,12 +4,14 @@ import { Route, Routes } from 'react-router';
 import './App.css';
 import { AppContainer } from './styles/reset';
 import { IssuesProvider } from './context/IssueContext';
+
 import Header from './components/Header';
 import Footer from './components/Footer';
-import ShowApiDataCompo from './ShowApiDataCompo';
-import ShowApiDetailCompo from './ShowApiDetailCompo';
 import ErrorBoundary from './components/ErrorBoundary';
 import Fallback from './components/Fallback';
+
+import IssueDetail from './pages/IssueDetail/IssueDetail';
+import List from './pages/List/List';
 
 function App() {
   return (
@@ -18,8 +20,8 @@ function App() {
         <Header />
         <ErrorBoundary fallback={<Fallback />}>
           <Routes>
-            <Route path="/" element={<ShowApiDataCompo />} />
-            <Route path="/detail" element={<ShowApiDetailCompo />} />
+            <Route path="/" element={<List />} />
+            <Route path="/:number" element={<IssueDetail />} />
           </Routes>
         </ErrorBoundary>
         <Footer />
