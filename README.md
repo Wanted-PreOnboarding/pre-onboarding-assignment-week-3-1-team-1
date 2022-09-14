@@ -1,6 +1,6 @@
 ## <img src='https://cdn-icons-png.flaticon.com/512/25/25231.png' width='40'/> 띵스플로우 Repository
 
-### ❓ 과제 개요
+### ❓ 개요
 #### [특정 깃허브 레파지토리의 이슈 목록과 상세 내용](https://github.com/angular/angular-cli)을 확인하는 웹 사이트 구축한다.
 
 ***
