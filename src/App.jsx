@@ -14,14 +14,16 @@ import Fallback from './components/Fallback';
 function App() {
   return (
     <AppContainer className="App">
-      <Header />
-      <ErrorBoundary fallback={<Fallback />}>
-        <Routes>
-          <Route path="/" element={<ShowApiDataCompo />} />
-          <Route path="/detail" element={<ShowApiDetailCompo />} />
-        </Routes>
-      </ErrorBoundary>
-      <Footer />
+      <IssuesProvider>
+        <Header />
+        <ErrorBoundary fallback={<Fallback />}>
+          <Routes>
+            <Route path="/" element={<ShowApiDataCompo />} />
+            <Route path="/detail" element={<ShowApiDetailCompo />} />
+          </Routes>
+        </ErrorBoundary>
+        <Footer />
+      </IssuesProvider>
     </AppContainer>
   );
 }
