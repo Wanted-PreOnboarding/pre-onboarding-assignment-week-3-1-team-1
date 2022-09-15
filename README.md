@@ -54,14 +54,14 @@
 
 #### 팀원 소개
 
-|이름|개발 내용|
-|------|---|
-|[최홍규(팀장)](https://github.com/gomgun-lab)|UI: 상세 페이지 개발|
-|[강민규](https://github.com/kagrin97)|UI: 이슈 페이지 개발|
-|[백승전](https://github.com/BaikSeungJeon)|UI: 컴포넌트 및 레이아웃 개발|
-|[김정수](https://github.com/sunpl13)|설계: Context API 설계 및 개발|
-|[류웅선](https://github.com/unsnruu)|설계: Error 바운더리 설계 및 핸들러 개발|
-|[윤여건](https://github.com/kunnyCode)|설계: API 연동 및 무한스크롤 개발|
+| 이름                                          | 개발 내용                                |
+| --------------------------------------------- | ---------------------------------------- |
+| [최홍규(팀장)](https://github.com/gomgun-lab) | UI: 상세 페이지 개발                     |
+| [강민규](https://github.com/kagrin97)         | UI: 이슈 페이지 개발                     |
+| [백승전](https://github.com/BaikSeungJeon)    | UI: 컴포넌트 및 레이아웃 개발            |
+| [김정수](https://github.com/sunpl13)          | 설계: Context API 설계 및 개발           |
+| [류웅선](https://github.com/unsnruu)          | 설계: Error 바운더리 설계 및 핸들러 개발 |
+| [윤여건](https://github.com/kunnyCode)        | 설계: API 연동 및 무한스크롤 개발        |
 
 #### 기능 소개
 
