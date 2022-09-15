@@ -10,27 +10,27 @@
 
 ### 🔗 데모 페이지
 
-#### 바로 가기
+#### 👉 바로 가기
 
-#### 설치 실행
+#### ⚙️ 설치 실행 
 
 ### 💁‍♂️ 프로젝트 소개
 
-#### 팀원 소개
+#### 🤝 팀원 소개 
 
-#### 구현 기능
+#### 💻 구현 기능 
 
-#### 개발 스택
+#### ⚒️ 개발 스택 
 
-#### 폴더 구조
+#### 🌲 폴더 구조 
 
 ---
 
 ### 🔗 데모 페이지
 
-### [바로 가기](https://wanted-pre-onboarding-fe-6-3-1.vercel.app/)
+#### 👉 [바로 가기](https://wanted-pre-onboarding-fe-6-3-1.vercel.app/) 
 
-### 설치 실행
+#### ⚙️ 설치 실행 
 
 ```bash
 # 설치
@@ -45,7 +45,7 @@
 
 ### 💁‍♂️ 프로젝트 소개
 
-### 팀원 소개
+#### 🤝 팀원 소개
 
 | 이름                                          | 역할 분담: 개발 내용                      |
 | --------------------------------------------- | ----------------------------------------- |
@@ -56,7 +56,7 @@
 | [류웅선](https://github.com/unsnruu)          | 설계: Error 바운더리 설계 및 핸들러 개발  |
 | [윤여건](https://github.com/kunnyCode)        | 설계: API 연동 및 무한스크롤 개발         |
 
-### 구현 기능
+#### 💻 구현 기능
 
 **1. 공통 헤더**
 
@@ -90,7 +90,7 @@
 
 - 이슈 목록 로딩 및 상세 페이지 접속 시, **로딩 페이지가 출력되어 직관적인 UX/UX를 제공**합니다.
 
-### 개발 스택
+#### ⚒️ 개발 스택
 
 <div>
 <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white"/>
@@ -98,7 +98,7 @@
 <img src="https://img.shields.io/badge/styled components-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white"/>
 </div>
 
-### 폴더 구조
+#### 🌲 폴더 구조
 
 <pre>
 src
