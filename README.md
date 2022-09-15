@@ -1,35 +1,35 @@
 ## <img src='https://cdn-icons-png.flaticon.com/512/25/25231.png' width='40'/> 띵스플로우 Repository
 
-### ❓ 개요
+## ❓ 개요
 #### [특정 깃허브 레파지토리의 이슈 목록과 상세 내용](https://github.com/angular/angular-cli)을 확인하는 웹 사이트 구축한다.
 
 ***
 
-### 📜 목차
+## 📜 목차
 
-#### 🔗 데모 페이지
+### 🔗 데모 페이지
 
-#### ➡️ 바로 가기
+#### 바로 가기
 
-#### ➡️ 설치 실행
+#### 설치 실행
 
-#### 💁‍♂️ 프로젝트 소개
+### 💁‍♂️ 프로젝트 소개
 
-#### ➡️ 팀원 소개 
+#### 팀원 소개 
 
-#### ➡️ 구현 기능
+#### 구현 기능
 
-#### ➡️ 개발 스택 
+#### 개발 스택 
 
-#### ➡️ 폴더 구조 
+#### 폴더 구조 
 
 ***
 
 ### 🔗 데모 페이지
 
-#### 👉 [바로 가기](url)
+### [바로 가기](https://wanted-pre-onboarding-fe-6-3-1.vercel.app/)
 
-#### 설치 실행
+### 설치 실행
 
 ```bash
 # 설치
@@ -44,7 +44,7 @@
 
 ### 💁‍♂️ 프로젝트 소개
 
-#### 팀원 소개
+### 팀원 소개
 
 |이름|역할 분담: 개발 내용|
 |------|---|
@@ -55,7 +55,7 @@
 |[류웅선](https://github.com/unsnruu)|설계: Error 바운더리 설계 및 핸들러 개발|
 |[윤여건](https://github.com/kunnyCode)|설계: API 연동 및 무한스크롤 개발|
 
-#### 구현 기능
+### 구현 기능
 
 **1. 공통 헤더**
 - **이슈 목록 페이지와 상세 페이지가 헤더를 공유**합니다.
@@ -72,7 +72,7 @@
 - **이슈의 상세 내용**이 표시되는 페이지입니다.
 - **‘이슈번호, 이슈제목, 작성자, 작성일, 코멘트 수, 작성자 프로필 이미지, 본문'** 내용이 표시됩니다.
     
-#### 개발 스택
+### 개발 스택
 
 <div>
 <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white"/>
@@ -80,7 +80,7 @@
 <img src="https://img.shields.io/badge/styled components-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white"/>
 </div>
 
-#### 폴더 구조
+### 폴더 구조
 
 <pre>
 src
