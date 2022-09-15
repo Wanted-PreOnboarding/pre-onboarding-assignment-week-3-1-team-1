@@ -49,8 +49,8 @@
 
 | 이름                                          | 역할 분담: 개발 내용                      |
 | --------------------------------------------- | ----------------------------------------- |
-| [최홍규(팀장)](https://github.com/gomgun-lab) | UI: 상세 페이지 및 반응형 개발            |
-| [강민규](https://github.com/kagrin97)         | UI: 이슈 페이지 및 반응형 개발            |
+| [최홍규(팀장)](https://github.com/gomgun-lab) | UI:  이슈 페이지 및 반응형 개발   |
+| [강민규](https://github.com/kagrin97)         | UI: 상세 페이지 및 반응형 개발            |
 | [백승전](https://github.com/BaikSeungJeon)    | UI: 공통 컴포넌트 및 반응형 레이아웃 개발 |
 | [김정수](https://github.com/sunpl13)          | 설계: Context API 설계 및 개발            |
 | [류웅선](https://github.com/unsnruu)          | 설계: Error 바운더리 설계 및 핸들러 개발  |
