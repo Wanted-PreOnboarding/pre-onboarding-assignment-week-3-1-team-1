@@ -16,8 +16,6 @@ const useInfinityScroll = () => {
     async function (page) {
       const fetchData = await ApiModel.getList(dispatch, page);
 
-      console.info(fetchData);
-
       if (fetchData.length === 0) {
         setFetching(false);
         setLastPage(true);
