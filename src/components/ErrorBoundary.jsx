@@ -1,3 +1,6 @@
+// react-error-boundary에서 코드의 상당부분을 참고하였습니다
+// https://github.com/bvaughn/react-error-boundary
+
 import React, { useState } from 'react';
 import PropType from 'prop-types';
 

@@ -17,7 +17,7 @@ function App() {
     <AppContainer className="App">
       <IssuesProvider>
         <Header />
-        <ErrorBoundary fallback={<Fallback />}>
+        <ErrorBoundary FallbackComponent={Fallback}>
           <Routes>
             <Route path="/" element={<List />} />
             <Route path="/:number" element={<IssueDetail />} />
